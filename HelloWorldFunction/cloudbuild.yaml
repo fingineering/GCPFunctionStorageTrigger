@@ -1,0 +1,12 @@
+steps:
+- name: 'docker.io/library/python:3.10'
+  entrypoint: /bin/sh
+  # Run pip install and pytest in the same build step
+  # (pip packages won't be preserved in future steps!)
+  args: [-c, 'pip install -r requirements.txt']
+  dir: 'HelloWorldFunction'
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['functions', 'deploy', 'hello_world', '--trigger-resource', 'YOUR_TRIGGER_BUCKET_NAME', '--trigger-event', 'google.storage.object.finalize', '--runtime', 'python39', '--entry-point', 'hello_world', '--region', 'europe-west3', '--source', 'https://source.developers.google.com/projects/$PROJECT_ID/repos/demoFunction/moveable-aliases/main/paths/HelloWorldFunction']
+  dir: '.'
+options:
+  logging: CLOUD_LOGGING_ONLY
