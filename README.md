@@ -27,6 +27,13 @@ In case of question, open an issue or checkout my profile:
 
 https://github.com/fingineering
 
+# Links:
+
+[Google Docs for storage trigger](https://cloud.google.com/functions/docs/calling/storage#functions-deploy-command-python)
+
+[Terraform google cloud function](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloudfunctions_function)
+
+[Trigger with custom event via Pub/Sub](https://cloud.google.com/scheduler/docs/tut-pub-sub?hl=en)
 
 # Warranties
 
